@@ -1,0 +1,337 @@
+/*FIRST PAGE*/
+
+
+/*TITLE*/
+#title {
+	background-color:#40E0D0;
+	height: 320px;
+	font-family: 'Ubuntu',sans-serif;
+}
+#title img {
+	height: 10rem;
+	width: 10rem;
+	margin: 6rem;
+	margin-left: 12rem;
+
+}
+
+#title h1 {
+	display: inline;
+	color: #FFFF;
+	font-size: 3.5rem;
+
+}
+/*TITLE END*/
+
+/*BODY*/
+#front-page {
+	margin: 2.4rem 9rem;
+	font-family: 'MerrriweatherSans',sans-serif;
+	height: 285px;
+}
+
+#front-page h3 {
+	display: inline;
+	padding: 6rem;
+	padding-right: 1rem;
+	font-family: 'Ubuntu',sans-serif;
+	
+}
+
+#front-page .generate-btn {
+	margin-left: 1rem;
+	background-color: #30E3CB;
+	border-width: 0;
+	font-weight: bold;
+}
+
+#front-page .generate-btn:hover {
+	background-color: #11CDD4;
+}
+
+#front-page form {
+	display: inline;
+}
+
+.body-text-all {
+	padding: 6rem;
+}
+
+.body-text {
+	text-align: left;
+	margin-bottom: 0.3rem;
+}
+/*BODY END*/
+
+/*FOOTER*/
+#footer {
+	background-color: #66BFBF;
+	text-align: center;
+}
+#footer p {
+	padding: 1.2rem 0;
+	margin-bottom: 0;
+}
+/*FOOTER END*/
+/*FIRST PAGE END*/
+
+
+/*SECOND PAGE*/
+
+
+
+.wrapper {
+		display: flex;
+		justify-content: center;
+		padding-top: 50px;
+		padding-left: 48rem;
+		padding-right: 30px;
+		padding-bottom: 30px;
+}
+
+.collapsible {
+	max-width: 800px;
+	overflow: hidden;
+	font-weight: 500;
+}
+
+.collapsible input {
+	display: none;
+}
+
+.collapsible label {
+	position: relative;
+	font-weight: 600;
+	background: #FFFF;
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .1), 0 4px 11px 0 rgba(0, 0, 0, .08);
+	color: #66BFBF;
+	display: block;
+	margin-bottom: 10px;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+	z-index: 1;
+	text-align: center;
+}
+
+.collapsible label:hover {
+	background-color: #D4F0ED;
+}
+
+.collapsible label:after {
+	content: "";
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 18px;
+	height: 18px;
+	background: url(arrow.svg) no-repeat 0 0;
+	transition: all 0.3s ease;
+}
+
+.collapsible input:checked + label:after {
+	transform: rotate(90deg);
+}
+
+.collapsible-text {
+	max-height: 1px;
+	overflow: hidden;
+	border-radius: 4px;
+	line-height: 1.4;
+	position: relative;
+	top: -100%;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+
+.collapsible input:checked ~ .collapsible-text {
+	max-height: 350px;
+	padding-bottom: 25px;
+	background: #FFFF;
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .1), 0 4px 11px 0 rgba(0, 0, 0, .08);
+	opacity: 1;
+	top: 0;
+}
+
+/*INSIDE INVOICE*/
+
+
+
+.address {
+	text-align: right;
+}
+
+.details {
+	text-align: left;
+}
+
+
+
+/*PAGE 2 CSS*/
+
+/*PAGE HEADER*/
+
+.header-pg-two {
+	background-color:#40E0D0;
+	height: 200px;
+	font-family: 'Ubuntu',sans-serif;
+}
+
+.header-pg-two h1 {
+	color: #FFFF;
+	padding-top: 80px;
+	padding-left: 300px;
+}
+
+/*PAGE HEADER END*/
+
+
+/*BODY PAGE 2*/
+
+#welcome h4 {
+	padding-top: 50px;
+	padding-left: 50px;
+	padding-bottom: 50px;
+}
+
+/*CARD BODY*/
+
+
+
+
+
+
+/*COLLAPSIBLE MENU*/
+
+.collapsible-text img {
+	width: 40px;
+	height: 40px;
+	margin: 20px;
+	margin-right: 0;
+}
+
+.collapsible-text h5 {
+	display: inline;
+	padding: 20px;
+	color: #FFF;
+}
+
+.top-collap {
+	background-color: #40E0D0;
+}
+
+.address {
+	text-align: right;
+	margin: 20px;
+}
+
+.thead-color {
+	background-color: #D4F0ED;
+}
+
+.alignment {
+	padding: 50px;
+	/*width: 100px;*/
+}
+
+.edit-header {
+	background-color: #40E0D0;
+	color: #FFFF;
+}
+
+.edit-header img {
+	width: 8rem;
+	height: 8rem;
+	margin: 2rem;
+	margin-left: 4rem;
+}
+
+.edit-header h1 {
+	display: inline;
+}
+
+.edit-header p {
+	display: inline;
+}
+
+
+/*EDIT SECTION PAGE 2*/
+
+
+form h5 {
+	display: inline;
+}
+
+
+
+
+/*RATE COUNTER*/
+
+.counter-buttons {
+	display: flex;
+	margin-top: 10px;
+}
+
+.counter-buttons button {
+	width: 45px;
+	height: 45px;
+	border: 1px solid #000;
+	color: #000;
+	border-radius: 0;
+	background: #FFF;
+	
+}
+
+.counter-buttons input {
+	border: none;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	text-align: center;
+	width: 100px;
+	font-size: 20px;
+	color: #000;
+	font-weight: 300;
+	
+}
+
+/*RATE COUNTER END*/
+
+
+/*LINE TOTAL GENERATION*/
+
+.line-total .fa-dollar {
+	display: inline-block;
+	font-size: 100%;
+	margin-right: 5px;
+}
+
+/*LINE TOTAL END*/
+
+/*CSS EDIT SECTION*/
+
+.form-question {
+	padding: 10px 20px;
+}
+
+.edit-form h5 {
+	padding-right: 20px;
+}
+
+.save-btn {
+	margin-left: 1rem;
+	background-color: #30E3CB;
+	border-width: 0;
+	font-weight: bold;
+	color: #FFF;
+	padding: 10px;
+	border-radius: 8px;
+	border-width: 1px;
+	border-color: #11CDD4;
+	margin-top: 10px;
+}
+
+.save-btn:hover {
+	background-color: #11CDD4;
+}
+
+/*EDIT SECTION CSS END*/

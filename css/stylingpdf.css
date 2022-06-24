@@ -1,0 +1,91 @@
+body {
+	width: 100%;
+	max-width: 1250px;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#invoice {
+	padding-bottom: 50px;
+}
+
+/*STYLING THE PAGE HEADER*/
+
+#pdf-pg-title {
+	background-color:#40E0D0;
+	height: 320px;
+	font-family: 'Ubuntu',sans-serif;
+}
+
+#pdf-pg-title img {
+	height: 10rem;
+	width: 10rem;
+	margin: 6rem;
+	margin-left: 12rem;
+}
+
+#pdf-pg-title h1 {
+	display: inline;
+	color: #FFFF;
+	font-size: 3.5rem;
+}
+
+/*PAGE HEADER END*/
+
+/*STYLING THE ADDRESS SECTION*/
+
+.address {
+	text-align: right;
+	margin: 40px;
+}
+
+/*ADDRESS SECTION END*/
+
+/*FORM DETAILS SECTION*/
+
+#name-of-invoice {
+	margin-left: 40px;
+	margin-bottom: 20px;
+
+}
+
+.table {
+	max-width: 1050px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+.thead-color {
+	background-color: #D4F0ED;
+}
+
+/*FORM DETAILS END*/
+
+/*BUTTON CSS*/
+
+.pdf-btn {
+	margin-left: 200px;
+	background-color: #30E3CB;
+	border-width: 0;
+	font-weight: bold;
+	color: #FFF;
+	padding: 10px;
+	border-radius: 8px;
+	border-width: 1px;
+	border-color: #11CDD4;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.pdf-btn:hover {
+	background-color: #11CDD4;
+}
+
+
+/*END*/

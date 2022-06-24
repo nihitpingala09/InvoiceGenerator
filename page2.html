@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Invoice Generator</title>
+
+
+	<!-- CSS link -->
+	<link rel="stylesheet" type="" href="css/styling.css">
+
+	<!-- Bootstrap Link -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+	<!-- Javascript Link -->
+	<script type="text/javascript" src="dropjs.js"></script>
+	<script type="text/javascript" src="newjs.js"></script>
+	<script type="text/javascript" src="page2js.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="pdfpagejs.js"></script>
+	
+
+	<!-- Favicon image -->
+	<link rel="icon" type="" href="images/favicon invoice.png">
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Ubuntu&display=swap" rel="stylesheet">
+
+
+	<style type="text/css">
+		.nav-tabs .nav-link.active {
+	background-color: #66BFBF;
+	color: #FFFF;
+	border-bottom: 1px solid #66BFBF;
+	/*border: 3px solid #66BFBF;*/
+}
+
+	.nav-tabs .nav-link {
+	background-color: #FFFF;
+	color: #66BFBF;
+	/*border: 3px solid;*/
+	margin-right: 2rem;
+	padding-right: 3rem;
+	padding-left: 3rem;
+	border-bottom: 1px solid #66BFBF;
+}
+
+.nav-tabs .nav-link.active:hover {
+	color: #FFFF;
+}
+
+.nav-tabs .nav-link:hover{
+	background-color: #40E0D0;
+	color: grey;
+} 
+
+.tab-content {
+	padding: 50px;
+}
+
+.nav-tabs {
+	border-bottom: 1px solid #66BFBF;
+}
+
+
+	</style>
+
+	<script type="text/javascript">
+		function showDescription()
+		{
+			var selectText=document.getElementById("drop-api");
+			var displayText=selectText.options[selectText.selectedIndex].text;
+			localStorage.setItem("ddvalue",displayText);
+			return true;
+		}
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<section id="welcome">
+		<div class="header-pg-two">
+		<!-- HEADER -->
+		<h1>Welcome to Invoice Generator, <span id="invoice-name"> </span>!</h1>
+<!-- HEADER END -->
+		</div>
+		<h4>Saved Invoices</h4>
+
+	<!-- PAGE 2 BODY -->
+
+	<!-- TABS HEADER -->
+		<div class="container">
+		<ul class="nav nav-tabs">
+			<li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#preview"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+</svg> Preview</a></li>
+			<li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#edit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+  <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+</svg> Edit</a></li>
+		</ul>
+		<!-- TABS HEADER END -->
+
+		<!-- PREVIEW BODY -->
+		<div id="pdf-content" class="tab-content">
+			<div class="tab-pane active" id="preview">
+				
+				<table class="border g-0 rounded shadow-sm">
+					<tr>
+					<td class="alignment">
+						<h5 class="align"><span id="invoice-name-again"> </span></h5>
+		    <br>
+		    <p class="align">5th May, 2022</p>
+					</td>
+					<td>
+						<div class="wrapper">
+    			<div class="collapsible">
+    				<input type="checkbox" id="collapsible-head">
+    				<label for="collapsible-head">View Invoice</label>
+    				<div class="collapsible-text">
+    					<div class="top-collap">
+    					<img src="images/invoice image.png">
+    					<h5>Invoice Generator</h5>
+    				</div>
+    					<p class="address">LegalForce RAPC Worldwide <br> +1 877-794-9511 <br> 1580 West El Camino Real, Suite 10 <br> Mountain View, California <br> 94040 - 2479 <br> United States of America</p>
+    																				<div class="container">
+															    					<table class="table table-bordered">
+															  <thead class="thead-color">
+															    <tr>
+															      
+															      <th scope="col">Description</th>
+															      <th scope="col">Rate</th>
+															      <th scope="col">Quantity</th>
+															      <th scope="col">Line Total</th>
+															    </tr>
+															  </thead>
+															  <tbody id="table-body">
+															    
+															  </tbody>
+															</table>
+															</div>
+
+															<script type="text/javascript" src="newjs.js"></script>
+    				</div>
+    			</div>
+    		</div>
+					</td>
+				</tr>
+				</table>
+
+			</div>
+			<!-- PREVIEW BODY END -->
+
+			<!-- EDIT BODY -->
+			
+			<div class="tab-pane" id="edit">
+				
+				<div class="edit-header">
+    					<img src="images/invoice image.png">
+    					<h1>Invoice Generator</h1>
+    				</div>
+    					<p class="address">LegalForce RAPC Worldwide <br> +1 877-794-9511 <br> 1580 West El Camino Real, Suite 10 <br> Mountain View, California <br> 94040 - 2479 <br> United States of America</p>
+    					<div class="edit-form">
+    					<form action="pdfpage.html" method="GET">
+    						<div class="form-question">
+    						<h5>Invoice Name:</h5>
+    						<input type="text" name="editname" placeholder="e.g., Invoice 1">
+    						</div>
+    						
+    						<div class="form-question">
+    						<h5>Product Description:</h5>
+																    						<select name="description-of-product" id="drop-api" onchange="fnrate();">
+																  					<option value="109.95" >Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</option>
+																  					<option value="22.3" >Mens Casual Premium Slim Fit T-Shirts </option>
+																  					<option value="55.99" >Mens Cotton Jacket</option>
+																  					<option value="15.99" >Mens Casual Slim Fit</option>
+																  					<option value="695" >John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</option>
+																  					<option value="168" >Solid Gold Petite Micropave</option>
+																  					<option value="9.99" >White Gold Plated Princess</option>
+																  					<option value="10.99">Pierced Owl Rose Gold Plated Stainless Steel Double</option>
+																  					<option value="64" >WD 2TB Elements Portable External Hard Drive - USB 3.0</option>
+																  					<option value="109" >SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s</option>
+																  					<option value="109" >Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5</option>
+																  					<option value="114" >WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive</option>
+																  					<option value="599" >Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin</option>
+																  					<option value="999.99" >Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED </option>
+																  					<option value="56.99" >BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats</option>
+																  					<option value="29.55" >Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket</option>
+																  					<option value="39.99" >Rain Jacket Women Windbreaker Striped Climbing Raincoats</option>
+																  					<option value="9.85" >MBJ Women's Solid Short Sleeve Boat Neck V </option>
+																  					<option value="7.95" >Opna Women's Short Sleeve Moisture</option>
+																  					<option value="12.99">DANVOUY Womens T Shirt Casual Cotton Short</option>
+																</select>
+															</div>
+    						
+    						<div class="form-question">
+    						<h5>Rate:</h5>
+    						<input type="text" id="rate-api" readonly />
+    						</div>
+    						
+    						<div class="form-question">
+    						<div class="counter-quantity">
+    						<h5>Quantity:</h5>
+    							<div class="counter-buttons">
+    								<button class="btn minus-btn disabled" type="button">-</button>
+    								<input  name="qty" id="quantity-of-item" type="text" class="num" value="1">
+    								<button class="btn plus-btn" type="button">+</button>
+    							</div>
+
+
+    					  </div>
+    					</div>
+    					  
+								
+								<div class="form-question">
+    						<h5 class="line-total">Line Total Generated:</h5>
+    						<span><i class="fa fa-dollar"></i></span>
+    						<input type="text" id="result-price" name="final-amt" readonly />
+    						</div>
+    						
+    						<!-- div end -->
+
+    						<script type="text/javascript">
+    								function fnrate() 
+										{
+											var d=document.getElementById("drop-api");
+											var displayText=d.options[d.selectedIndex].value;
+											document.getElementById("rate-api").value=displayText;
+											document.getElementById("result-price").value=displayText;
+										}
+    								document.querySelector(".minus-btn").setAttribute("disabled","disbaled");
+    								var valueCount
+    								
+    								function priceTotal()
+    								{
+    									var price=document.getElementById("drop-api").value;
+    									var total=valueCount*price;
+    									document.getElementById("result-price").value=total;
+    								}
+    								document.querySelector(".plus-btn").addEventListener("click",function()
+    								{
+    											valueCount=document.getElementById("quantity-of-item").value;
+    											valueCount++;
+    											document.getElementById("quantity-of-item").value=valueCount;
+    											if (valueCount>1)
+    											{
+    														document.querySelector(".minus-btn").removeAttribute("disabled");
+    														document.querySelector(".minus-btn").classList.remove("disabled");
+
+    											}
+    											priceTotal()
+    								})
+    								document.querySelector(".minus-btn").addEventListener("click",function()
+    								{
+    											valueCount=document.getElementById("quantity-of-item").value;
+    											valueCount--;
+    											document.getElementById("quantity-of-item").value=valueCount;
+    											if (valueCount==1)
+    											{
+    														document.querySelector(".minus-btn").setAttribute("disabled","disbaled");
+    											}
+    											priceTotal()
+    								})	
+
+    							</script>
+
+    									<button class="save-btn" onclick="showDescription()">Save Invoice</button>  
+    					</form>
+
+    				</div>
+			</div>
+
+			<!-- EDIT BODY END -->
+		</div>
+
+
+	</div>
+
+<!-- FOOTER -->
+
+<section id="footer">
+	<p>© Invoice Generator @ United States of America.</p>
+	</section>
+	<!-- FOOTER END -->
+	
+
+	
+		
+	</section>
+
+</body>
+</html>
